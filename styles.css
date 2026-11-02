@@ -1,0 +1,343 @@
+/* Incluye el relleno y los bordes dentro del tamaño de cada elemento. */
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+    --fondo: #f7f5ef;
+    --texto: #252a23;
+    --texto-secundario: #62665c;
+    --panel: #eaece2;
+    --borde: #dcded2;
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 6%;
+    border-bottom: 1px solid var(--borde);
+}
+
+header > a {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+nav a {
+    padding-bottom: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    border-bottom-color: var(--texto);
+}
+
+main {
+    width: 88%;
+    max-width: 1200px;
+    min-height: 70vh;
+    margin: 60px auto;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+.logo img {
+    display: block;
+    height: 50px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+h1,
+h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: clamp(40px, 6vw, 76px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 34px;
+}
+
+p {
+    color: var(--texto-secundario);
+}
+
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+figure {
+    min-width: 0;
+    margin: 0;
+}
+
+.galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background-color: var(--panel);
+}
+
+figcaption {
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+
+form {
+    max-width: 600px;
+    padding: 28px;
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+legend {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    background-color: var(--fondo);
+    color: var(--texto);
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 12px 20px;
+    border: 1px solid var(--texto);
+    background-color: var(--texto);
+    color: var(--fondo);
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--texto);
+    outline-offset: 4px;
+}
+
+
+footer {
+    padding: 24px 6%;
+    border-top: 1px solid var(--borde);
+    font-size: 12px;
+}
+
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 500px) {
+    nav {
+        gap: 18px;
+    }
+
+    main {
+        margin-top: 35px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr; 
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+.presentacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 20px 0 40px;
+}
+
+.etiqueta {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.presentacion h1 {
+    letter-spacing: -2px;
+}
+
+.presentacion h1 em {
+    color: var(--texto-secundario);
+}
+
+.descripcion {
+    max-width: 440px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.boton-enlace {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px 24px;
+    background-color: var(--texto);
+    color: var(--fondo);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.boton-enlace:hover {
+    opacity: 0.85;
+}
+
+.presentacion-foto {
+    min-width: 0;
+}
+
+.presentacion-foto img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 80px;
+    background-color: var(--panel);
+}
+
+.bienvenida {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+    gap: 40px;
+    padding: 48px;
+    background-color: var(--panel);
+}
+
+.bienvenida-texto,
+.bienvenida-video {
+    min-width: 0;
+}
+
+.bienvenida-texto h2 {
+    margin-top: 0;
+}
+
+.bienvenida-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background-color: #171717;
+}
+
+@media (max-width: 800px) {
+    .presentacion,
+    .bienvenida {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .presentacion-foto {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    .bienvenida {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    .bienvenida {
+        padding: 20px;
+    }
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: var(--texto-secundario);
+}
